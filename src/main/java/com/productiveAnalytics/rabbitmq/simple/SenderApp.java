@@ -17,7 +17,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
 
-import com.productiveAnalytics.rabbitmq.AMQPCommons;
+import com.productiveAnalytics.rabbitmq.AMQPConnectionUtility;
 
 
 /**
@@ -34,7 +34,7 @@ public class SenderApp
         
         Channel channel = null;
         try {
-			channel = AMQPCommons.openRabbiMQChannel(AMQPCommons.QUEUE_NAME_SIMPLE);
+			channel = AMQPConnectionUtility.openRabbiMQChannel(AMQPConnectionUtility.QUEUE_NAME_SIMPLE);
 		} catch (KeyManagementException kmEx) {
 			kmEx.printStackTrace();
 		} catch (NoSuchAlgorithmException noAlgoEx) {
@@ -73,7 +73,7 @@ public class SenderApp
         if (channel !=  null)
         {
         	try {
-        		AMQPCommons.closeRabbitMQChannel(channel);
+        		AMQPConnectionUtility.closeRabbitMQChannel(channel);
 			} catch (IOException ioEx) {
 				ioEx.printStackTrace();
 			} catch (TimeoutException timeoutEx) {
@@ -85,7 +85,16 @@ public class SenderApp
     private void sendMessage(Channel channel, String msg)
     			 throws UnsupportedEncodingException, IOException
     {
-    	channel.basicPublish(AMQPCommons.DEFAULT_EXCHANGE, AMQPCommons.QUEUE_NAME_SIMPLE, null, msg.getBytes("UTF-8"));
+    	/*
+    	 * 
+    	 * channel.basicPublish(...) is the work horse of the Sender
+    	 * 
+    	 */
+    	channel.basicPublish(AMQPConnectionUtility.DEFAULT_EXCHANGE,
+    						 AMQPConnectionUtility.QUEUE_NAME_SIMPLE,
+    						 null,
+    						 msg.getBytes("UTF-8"));
+    	
     	System.out.println(" [x] Sent '" + msg + "'");
     }
     

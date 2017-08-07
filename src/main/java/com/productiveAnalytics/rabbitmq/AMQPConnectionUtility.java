@@ -10,9 +10,13 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
 
-public class AMQPCommons 
+public class AMQPConnectionUtility 
 {
+	/**
+	 * amqp://ecmforgi:IhFm6sHjpKsRQNKhn1eXUfwgN1swyB1C@wombat.rmq.cloudamqp.com/ecmforgi
+	 */
 	public static String CLOUDAMQP_URL = "amqp://wombat.rmq.cloudamqp.com/ecmforgi";
+	
 	public static String CLOUDAMQP_USERNAME = "ecmforgi";
 	public static String CLOUDAMQP_PASSWORD = "IhFm6sHjpKsRQNKhn1eXUfwgN1swyB1C";
 	

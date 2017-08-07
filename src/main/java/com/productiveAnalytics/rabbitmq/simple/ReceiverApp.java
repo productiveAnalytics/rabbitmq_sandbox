@@ -13,13 +13,17 @@ import java.util.Date;
 import java.util.concurrent.TimeoutException;
 
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.Consumer;
 import com.rabbitmq.client.ConsumerCancelledException;
-import com.rabbitmq.client.QueueingConsumer;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.Envelope;
+//import com.rabbitmq.client.QueueingConsumer;
 import com.rabbitmq.client.ShutdownSignalException;
 import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 
-import com.productiveAnalytics.rabbitmq.AMQPCommons;
+import com.productiveAnalytics.rabbitmq.AMQPConnectionUtility;
 
 public class ReceiverApp {
 	private static SimpleDateFormat FORMAT_yyyymmdd_hhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS a");
@@ -29,7 +33,7 @@ public class ReceiverApp {
 	{
 		Channel channel = null;
         try {
-			channel = AMQPCommons.openRabbiMQChannel(AMQPCommons.QUEUE_NAME_SIMPLE);
+			channel = AMQPConnectionUtility.openRabbiMQChannel(AMQPConnectionUtility.QUEUE_NAME_SIMPLE);
 		} catch (KeyManagementException kmEx) {
 			kmEx.printStackTrace();
 		} catch (NoSuchAlgorithmException noAlgoEx) {
@@ -44,25 +48,55 @@ public class ReceiverApp {
         
         if (channel !=  null)
         {
-        	QueueingConsumer qConsumer = new QueueingConsumer(channel);
-        	boolean autoACK = true;
-        	String receivedMsg = null;
+        	/*
+        	 * QueueingConsumer has been Deprecated, so using DefaultConsumer
+        	 */
+//        	QueueingConsumer qConsumer = new QueueingConsumer(channel);
         	
-        	while (true)
-        	{
-        		channel.basicConsume(AMQPCommons.QUEUE_NAME_SIMPLE, autoACK, qConsumer);
+        	Consumer qConsumer = new DefaultConsumer(channel) {
+					        		
+        							  @Override
+					        		  public void handleDelivery(String consumerTag, 
+					        				  					 Envelope envelope,
+					        		                             AMQP.BasicProperties properties,
+					        		                             byte[] body)
+					        		              throws IOException
+        							  {
+        								  String receivedMsg = new String(body, "UTF-8");
+        					        	  System.out.println(" [x] Received @ : "+ FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
+        					        	  
+        					        	  try {
+        					        		  int receiverSleepDelay = (int) (Math.random() * Math.random() * 13333);
+        					        		  Thread.sleep(receiverSleepDelay);
+        					        	  } catch (InterruptedException interruptedEx) {
+        									  interruptedEx.printStackTrace();
+        								  }
+					        		  }
+        						 };
+        	
+        	
+        	final boolean autoACK = true;
+       	
+//        	while (true)
+//        	{
+        		/*
+        		 * 
+        		 * channel.basicConsume(...) is the work horse of the Receiver
+        		 * 
+        		 */
+        		channel.basicConsume(AMQPConnectionUtility.QUEUE_NAME_SIMPLE, autoACK, qConsumer);
         		
-        		QueueingConsumer.Delivery delivery = qConsumer.nextDelivery();
-        		receivedMsg = new String(delivery.getBody());
-        		System.out.println(" [x] Received @ : "+ FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
+//        		QueueingConsumer.Delivery delivery = qConsumer.nextDelivery();
+//        		receivedMsg = new String(delivery.getBody());
+//        		System.out.println(" [x] Received @ : "+ FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
         		
-        		try {
-        			int receiverSleepDelay = (int) (Math.random() * Math.random() * 13333);
-					Thread.sleep(receiverSleepDelay);
-				} catch (InterruptedException interruptedEx) {
-					interruptedEx.printStackTrace();
-				}
-        	}
+//        		try {
+//        			int receiverSleepDelay = (int) (Math.random() * Math.random() * 13333);
+//					Thread.sleep(receiverSleepDelay);
+//				} catch (InterruptedException interruptedEx) {
+//					interruptedEx.printStackTrace();
+//				}
+//        	}
         }
 	}
 }
