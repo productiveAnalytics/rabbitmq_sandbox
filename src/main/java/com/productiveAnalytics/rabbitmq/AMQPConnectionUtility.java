@@ -21,7 +21,9 @@ public class AMQPConnectionUtility
 	public static String CLOUDAMQP_PASSWORD = "IhFm6sHjpKsRQNKhn1eXUfwgN1swyB1C";
 	
 	public static String DEFAULT_EXCHANGE = "";
-	public static String QUEUE_NAME_SIMPLE = "simple_queue";
+	
+	public static String QUEUE_NAME_SIMPLE 		= "simple_queue";
+	public static String QUEUE_NAME_MULTI_TASK 	= "multi_task_queue";
 	
 	public static Channel openRabbiMQChannel(String queueName)
 				    		throws KeyManagementException, 
