@@ -1,0 +1,235 @@
+>>>Consumers starting at 2017-08-07 02:18:08 309 AM
+[DEBUG] Round Robin=false
+[DEBUG] TimtToLive =60000ms
+
+Opened RabbitMQ Channel & Connection >>>
+Worker 1 started >>> Waiting for messages. To exit press CTRL+C
+Opened RabbitMQ Channel & Connection >>>
+Worker 2 started >>> Waiting for messages. To exit press CTRL+C
+Opened RabbitMQ Channel & Connection >>>
+Worker 3 started >>> Waiting for messages. To exit press CTRL+C
+Opened RabbitMQ Channel & Connection >>>
+Worker 4 started >>> Waiting for messages. To exit press CTRL+C
+Opened RabbitMQ Channel & Connection >>>
+Worker 5 started >>> Waiting for messages. To exit press CTRL+C
+******************************************************
+Starting 5 worker/consumer threads
+******************************************************
+				 [DEBUG:4]*Task[1296]: Complexity[3]*
+				 Worker [4] Received task: 'Task[1296]: Complexity[3]'
+			 [DEBUG:3]*Task[1295]: Complexity[9]*
+				 Worker [4] busy for 3 seconds.
+			 Worker [3] Received task: 'Task[1295]: Complexity[9]'
+			 Worker [3] busy for 9 seconds.
+		 [DEBUG:2]*Task[1297]: Complexity[5]*
+		 Worker [2] Received task: 'Task[1297]: Complexity[5]'
+		 Worker [2] busy for 5 seconds.
+	 [DEBUG:1]*Task[1289]: Complexity[10]*
+	 Worker [1] Received task: 'Task[1289]: Complexity[10]'
+	 Worker [1] busy for 10 seconds.
+					 [DEBUG:5]*Task[1294]: Complexity[6]*
+					 Worker [5] Received task: 'Task[1294]: Complexity[6]'
+					 Worker [5] busy for 6 seconds.
+				 Worker [4] Task 1296 Done
+				 [DEBUG:4]*Task[1298]: Complexity[6]*
+				 Worker [4] Received task: 'Task[1298]: Complexity[6]'
+				 Worker [4] busy for 6 seconds.
+		 Worker [2] Task 1297 Done
+		 [DEBUG:2]*Task[1299]: Complexity[1]*
+		 Worker [2] Received task: 'Task[1299]: Complexity[1]'
+		 Worker [2] busy for 1 seconds.
+					 Worker [5] Task 1294 Done
+					 [DEBUG:5]*Task[1300]: Complexity[9]*
+		 Worker [2] Task 1299 Done
+					 Worker [5] Received task: 'Task[1300]: Complexity[9]'
+					 Worker [5] busy for 9 seconds.
+		 [DEBUG:2]*Task[1301]: Complexity[9]*
+		 Worker [2] Received task: 'Task[1301]: Complexity[9]'
+		 Worker [2] busy for 9 seconds.
+			 Worker [3] Task 1295 Done
+				 Worker [4] Task 1298 Done
+			 [DEBUG:3]*Task[1302]: Complexity[3]*
+			 Worker [3] Received task: 'Task[1302]: Complexity[3]'
+			 Worker [3] busy for 3 seconds.
+				 [DEBUG:4]*Task[1303]: Complexity[2]*
+				 Worker [4] Received task: 'Task[1303]: Complexity[2]'
+				 Worker [4] busy for 2 seconds.
+	 Worker [1] Task 1289 Done
+	 [DEBUG:1]*Task[1304]: Complexity[10]*
+	 Worker [1] Received task: 'Task[1304]: Complexity[10]'
+	 Worker [1] busy for 10 seconds.
+				 Worker [4] Task 1303 Done
+				 [DEBUG:4]*Task[1305]: Complexity[6]*
+				 Worker [4] Received task: 'Task[1305]: Complexity[6]'
+				 Worker [4] busy for 6 seconds.
+			 Worker [3] Task 1302 Done
+			 [DEBUG:3]*Task[1306]: Complexity[8]*
+			 Worker [3] Received task: 'Task[1306]: Complexity[8]'
+			 Worker [3] busy for 8 seconds.
+					 Worker [5] Task 1300 Done
+					 [DEBUG:5]*Task[1307]: Complexity[2]*
+					 Worker [5] Received task: 'Task[1307]: Complexity[2]'
+					 Worker [5] busy for 2 seconds.
+		 Worker [2] Task 1301 Done
+		 [DEBUG:2]*Task[1308]: Complexity[5]*
+		 Worker [2] Received task: 'Task[1308]: Complexity[5]'
+		 Worker [2] busy for 5 seconds.
+					 Worker [5] Task 1307 Done
+					 [DEBUG:5]*Task[1309]: Complexity[7]*
+					 Worker [5] Received task: 'Task[1309]: Complexity[7]'
+					 Worker [5] busy for 7 seconds.
+				 Worker [4] Task 1305 Done
+				 [DEBUG:4]*Task[1310]: Complexity[9]*
+				 Worker [4] Received task: 'Task[1310]: Complexity[9]'
+				 Worker [4] busy for 9 seconds.
+	 Worker [1] Task 1304 Done
+			 Worker [3] Task 1306 Done
+	 [DEBUG:1]*Task[1311]: Complexity[6]*
+	 Worker [1] Received task: 'Task[1311]: Complexity[6]'
+	 Worker [1] busy for 6 seconds.
+		 Worker [2] Task 1308 Done
+			 [DEBUG:3]*Task[1312]: Complexity[4]*
+			 Worker [3] Received task: 'Task[1312]: Complexity[4]'
+			 Worker [3] busy for 4 seconds.
+		 [DEBUG:2]*Task[1313]: Complexity[6]*
+		 Worker [2] Received task: 'Task[1313]: Complexity[6]'
+		 Worker [2] busy for 6 seconds.
+					 Worker [5] Task 1309 Done
+			 Worker [3] Task 1312 Done
+					 [DEBUG:5]*Task[1314]: Complexity[7]*
+					 Worker [5] Received task: 'Task[1314]: Complexity[7]'
+					 Worker [5] busy for 7 seconds.
+			 [DEBUG:3]*Task[1315]: Complexity[4]*
+			 Worker [3] Received task: 'Task[1315]: Complexity[4]'
+			 Worker [3] busy for 4 seconds.
+	 Worker [1] Task 1311 Done
+	 [DEBUG:1]*Task[1316]: Complexity[7]*
+	 Worker [1] Received task: 'Task[1316]: Complexity[7]'
+	 Worker [1] busy for 7 seconds.
+		 Worker [2] Task 1313 Done
+		 [DEBUG:2]*Task[1317]: Complexity[2]*
+		 Worker [2] Received task: 'Task[1317]: Complexity[2]'
+		 Worker [2] busy for 2 seconds.
+				 Worker [4] Task 1310 Done
+				 [DEBUG:4]*Task[1318]: Complexity[1]*
+				 Worker [4] Received task: 'Task[1318]: Complexity[1]'
+				 Worker [4] busy for 1 seconds.
+				 Worker [4] Task 1318 Done
+				 [DEBUG:4]*Task[1319]: Complexity[1]*
+				 Worker [4] Received task: 'Task[1319]: Complexity[1]'
+				 Worker [4] busy for 1 seconds.
+			 Worker [3] Task 1315 Done
+		 Worker [2] Task 1317 Done
+			 [DEBUG:3]*Task[1320]: Complexity[5]*
+			 Worker [3] Received task: 'Task[1320]: Complexity[5]'
+			 Worker [3] busy for 5 seconds.
+		 [DEBUG:2]*Task[1321]: Complexity[6]*
+		 Worker [2] Received task: 'Task[1321]: Complexity[6]'
+		 Worker [2] busy for 6 seconds.
+				 Worker [4] Task 1319 Done
+				 [DEBUG:4]*Task[1322]: Complexity[5]*
+				 Worker [4] Received task: 'Task[1322]: Complexity[5]'
+				 Worker [4] busy for 5 seconds.
+					 Worker [5] Task 1314 Done
+					 [DEBUG:5]*Task[1323]: Complexity[1]*
+					 Worker [5] Received task: 'Task[1323]: Complexity[1]'
+					 Worker [5] busy for 1 seconds.
+					 Worker [5] Task 1323 Done
+					 [DEBUG:5]*Task[1324]: Complexity[10]*
+					 Worker [5] Received task: 'Task[1324]: Complexity[10]'
+					 Worker [5] busy for 10 seconds.
+	 Worker [1] Task 1316 Done
+	 [DEBUG:1]*Task[1325]: Complexity[7]*
+	 Worker [1] Received task: 'Task[1325]: Complexity[7]'
+	 Worker [1] busy for 7 seconds.
+			 Worker [3] Task 1320 Done
+			 [DEBUG:3]*Task[1326]: Complexity[9]*
+			 Worker [3] Received task: 'Task[1326]: Complexity[9]'
+			 Worker [3] busy for 9 seconds.
+				 Worker [4] Task 1322 Done
+				 [DEBUG:4]*Task[1327]: Complexity[9]*
+				 Worker [4] Received task: 'Task[1327]: Complexity[9]'
+				 Worker [4] busy for 9 seconds.
+		 Worker [2] Task 1321 Done
+		 [DEBUG:2]*Task[1328]: Complexity[4]*
+		 Worker [2] Received task: 'Task[1328]: Complexity[4]'
+		 Worker [2] busy for 4 seconds.
+		 Worker [2] Task 1328 Done
+		 [DEBUG:2]*Task[1329]: Complexity[2]*
+		 Worker [2] Received task: 'Task[1329]: Complexity[2]'
+		 Worker [2] busy for 2 seconds.
+	 Worker [1] Task 1325 Done
+	 [DEBUG:1]*Task[1330]: Complexity[8]*
+	 Worker [1] Received task: 'Task[1330]: Complexity[8]'
+	 Worker [1] busy for 8 seconds.
+		 Worker [2] Task 1329 Done
+		 [DEBUG:2]*Task[1331]: Complexity[6]*
+		 Worker [2] Received task: 'Task[1331]: Complexity[6]'
+		 Worker [2] busy for 6 seconds.
+					 Worker [5] Task 1324 Done
+			 Worker [3] Task 1326 Done
+					 [DEBUG:5]*Task[1332]: Complexity[9]*
+					 Worker [5] Received task: 'Task[1332]: Complexity[9]'
+					 Worker [5] busy for 9 seconds.
+			 [DEBUG:3]*Task[1333]: Complexity[3]*
+			 Worker [3] Received task: 'Task[1333]: Complexity[3]'
+			 Worker [3] busy for 3 seconds.
+				 Worker [4] Task 1327 Done
+				 [DEBUG:4]*Task[1334]: Complexity[1]*
+				 Worker [4] Received task: 'Task[1334]: Complexity[1]'
+				 Worker [4] busy for 1 seconds.
+				 Worker [4] Task 1334 Done
+				 [DEBUG:4]*Task[1335]: Complexity[9]*
+				 Worker [4] Received task: 'Task[1335]: Complexity[9]'
+				 Worker [4] busy for 9 seconds.
+			 Worker [3] Task 1333 Done
+			 [DEBUG:3]*Task[1336]: Complexity[8]*
+			 Worker [3] Received task: 'Task[1336]: Complexity[8]'
+			 Worker [3] busy for 8 seconds.
+		 Worker [2] Task 1331 Done
+		 [DEBUG:2]*Task[1337]: Complexity[9]*
+		 Worker [2] Received task: 'Task[1337]: Complexity[9]'
+		 Worker [2] busy for 9 seconds.
+	 Worker [1] Task 1330 Done
+	 [DEBUG:1]*Task[1338]: Complexity[5]*
+	 Worker [1] Received task: 'Task[1338]: Complexity[5]'
+	 Worker [1] busy for 5 seconds.
+					 Worker [5] Task 1332 Done
+					 [DEBUG:5]*Task[1339]: Complexity[9]*
+					 Worker [5] Received task: 'Task[1339]: Complexity[9]'
+					 Worker [5] busy for 9 seconds.
+				 Worker [4] Task 1335 Done
+				 [DEBUG:4]*Task[1340]: Complexity[9]*
+				 Worker [4] Received task: 'Task[1340]: Complexity[9]'
+				 Worker [4] busy for 9 seconds.
+	 Worker [1] Task 1338 Done
+	 [DEBUG:1]*Task[1341]: Complexity[8]*
+	 Worker [1] Received task: 'Task[1341]: Complexity[8]'
+	 Worker [1] busy for 8 seconds.
+			 Worker [3] Task 1336 Done
+			 [DEBUG:3]*Task[1342]: Complexity[10]*
+			 Worker [3] Received task: 'Task[1342]: Complexity[10]'
+			 Worker [3] busy for 10 seconds.
+		 Worker [2] Task 1337 Done
+		 [DEBUG:2]*Task[1343]: Complexity[1]*
+		 Worker [2] Received task: 'Task[1343]: Complexity[1]'
+		 Worker [2] busy for 1 seconds.
+		 Worker [2] Task 1343 Done
+		 [DEBUG:2]*Task[1344]: Complexity[3]*
+		 Worker [2] Received task: 'Task[1344]: Complexity[3]'
+		 Worker [2] busy for 3 seconds.
+		 Worker [2] Task 1344 Done
+		 [DEBUG:2]*Task[1345]: Complexity[2]*
+		 Worker [2] Received task: 'Task[1345]: Complexity[2]'
+		 Worker [2] busy for 2 seconds.
+					 Worker [5] Task 1339 Done
+TTL crossed...Stopping thread 5
+					 [DEBUG:5]*Task[1346]: Complexity[10]*
+					 Worker [5] Received task: 'Task[1346]: Complexity[10]'
+					 Worker [5] busy for 10 seconds.
+Worker[1] completed 7 tasks in 53000ms.
+Worker[2] completed 13 tasks in 59000ms.
+Worker[3] completed 9 tasks in 53000ms.
+Worker[4] completed 11 tasks in 52000ms.
+Worker[5] completed 9 tasks in 60000ms.
+>>>Consumers stopping at 2017-08-07 02:19:10 994 AM
