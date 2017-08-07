@@ -82,7 +82,7 @@ public class SenderApp
         }
     }
     
-    private void sendMessage(Channel channel, String msg)
+    public void sendMessage(Channel channel, String msg)
     			 throws UnsupportedEncodingException, IOException
     {
     	/*
