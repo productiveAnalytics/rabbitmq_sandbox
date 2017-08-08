@@ -23,7 +23,7 @@ public class TaskSenderApp extends SenderApp
         
         Channel channel = null;
         try {
-			channel = AMQPConnectionUtility.openRabbiMQChannel(AMQPConnectionUtility.QUEUE_NAME_MULTI_TASK);
+			channel = AMQPConnectionUtility.openRabbiMQChannelForQueue(AMQPConnectionUtility.QUEUE_NAME_MULTI_TASK);
 		} catch (KeyManagementException kmEx) {
 			kmEx.printStackTrace();
 		} catch (NoSuchAlgorithmException noAlgoEx) {

@@ -26,15 +26,13 @@ import com.productiveAnalytics.rabbitmq.AMQPConnectionUtility;
  */
 public class SenderApp 
 {
-	private static SimpleDateFormat FORMAT_yyyymmdd_hhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS a");
-	
     public static void main( String[] args )
     {
         SenderApp sender = new SenderApp();
         
         Channel channel = null;
         try {
-			channel = AMQPConnectionUtility.openRabbiMQChannel(AMQPConnectionUtility.QUEUE_NAME_SIMPLE);
+			channel = AMQPConnectionUtility.openRabbiMQChannelForQueue(AMQPConnectionUtility.QUEUE_NAME_SIMPLE);
 		} catch (KeyManagementException kmEx) {
 			kmEx.printStackTrace();
 		} catch (NoSuchAlgorithmException noAlgoEx) {
@@ -53,7 +51,7 @@ public class SenderApp
         	try {
         		while (true)
         		{
-	        		msg = "Secret message: This is my message via RabbitMQ "+ FORMAT_yyyymmdd_hhmmss.format(new Date());
+	        		msg = "Secret message: This is my message via RabbitMQ "+ AMQPConnectionUtility.FORMAT_yyyymmdd_hhmmss.format(new Date());
 					sender.sendMessage(channel, msg);
 					
 					try {

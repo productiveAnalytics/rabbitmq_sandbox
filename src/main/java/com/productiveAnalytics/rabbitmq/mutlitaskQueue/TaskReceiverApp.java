@@ -24,8 +24,6 @@ public class TaskReceiverApp {
 	
 	private static final int PREFETCH_COUNT = 1;
 	
-	private static SimpleDateFormat FORMAT_yyyymmdd_hhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS a");
-	
 	private TaskReceiverApp() {
 		// do not allow to instantiate
 	}
@@ -60,7 +58,7 @@ public class TaskReceiverApp {
 			}
 		}
 		
-		System.out.println(">>>Consumers starting at "+ FORMAT_yyyymmdd_hhmmss.format(new Date()));
+		System.out.println(">>>Consumers starting at "+ AMQPConnectionUtility.FORMAT_yyyymmdd_hhmmss.format(new Date()));
 		
 		System.out.println("[DEBUG] Round Robin="+ round_robin_flag);
 		System.out.println("[DEBUG] TimtToLive ="+ TTL +"ms");
@@ -94,7 +92,7 @@ public class TaskReceiverApp {
 			++workerId;
 		}
 		
-		System.out.println(">>>Consumers stopping at "+ FORMAT_yyyymmdd_hhmmss.format(new Date()));
+		System.out.println(">>>Consumers stopping at "+ AMQPConnectionUtility.FORMAT_yyyymmdd_hhmmss.format(new Date()));
 		
 		System.exit(0);
 	}
@@ -127,7 +125,7 @@ public class TaskReceiverApp {
 			this.TTL = TTL;
 			
 	        try {
-				channel = AMQPConnectionUtility.openRabbiMQChannel(AMQPConnectionUtility.QUEUE_NAME_MULTI_TASK);
+				channel = AMQPConnectionUtility.openRabbiMQChannelForQueue(AMQPConnectionUtility.QUEUE_NAME_MULTI_TASK);
 			} catch (KeyManagementException kmEx) {
 				kmEx.printStackTrace();
 			} catch (NoSuchAlgorithmException noAlgoEx) {

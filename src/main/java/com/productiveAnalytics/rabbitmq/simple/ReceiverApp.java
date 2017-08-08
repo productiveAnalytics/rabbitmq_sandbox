@@ -26,14 +26,12 @@ import com.rabbitmq.client.Channel;
 import com.productiveAnalytics.rabbitmq.AMQPConnectionUtility;
 
 public class ReceiverApp {
-	private static SimpleDateFormat FORMAT_yyyymmdd_hhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS a");
-	
 	public static void main(String[] args)
 				       throws IOException, ShutdownSignalException, ConsumerCancelledException, InterruptedException
 	{
 		Channel channel = null;
         try {
-			channel = AMQPConnectionUtility.openRabbiMQChannel(AMQPConnectionUtility.QUEUE_NAME_SIMPLE);
+			channel = AMQPConnectionUtility.openRabbiMQChannelForQueue(AMQPConnectionUtility.QUEUE_NAME_SIMPLE);
 		} catch (KeyManagementException kmEx) {
 			kmEx.printStackTrace();
 		} catch (NoSuchAlgorithmException noAlgoEx) {
@@ -63,7 +61,7 @@ public class ReceiverApp {
 					        		              throws IOException
         							  {
         								  String receivedMsg = new String(body, "UTF-8");
-        					        	  System.out.println(" [x] Received @ : "+ FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
+        					        	  System.out.println(" [x] Received @ : "+ AMQPConnectionUtility.FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
         					        	  
         					        	  try {
         					        		  int receiverSleepDelay = (int) (Math.random() * Math.random() * 13333);
@@ -88,7 +86,7 @@ public class ReceiverApp {
         		
 //        		QueueingConsumer.Delivery delivery = qConsumer.nextDelivery();
 //        		receivedMsg = new String(delivery.getBody());
-//        		System.out.println(" [x] Received @ : "+ FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
+//        		System.out.println(" [x] Received @ : "+ AMQPConnectionUtility.FORMAT_yyyymmdd_hhmmss.format(new Date()) + ": " + receivedMsg );
         		
 //        		try {
 //        			int receiverSleepDelay = (int) (Math.random() * Math.random() * 13333);
