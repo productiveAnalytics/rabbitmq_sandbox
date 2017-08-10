@@ -1,4 +1,4 @@
-package com.productiveAnalytics.rabbitmq.pubsub_simple;
+package com.productiveAnalytics.rabbitmq.pubsub_fanout;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -16,6 +16,10 @@ import com.productiveAnalytics.rabbitmq.simple.SenderApp;
 
 public class EmitLogs extends SenderApp
 {
+	private EmitLogs() {
+		// do not allow instantiation
+	}
+	
 	public static void main( String[] args )
     {
 		EmitLogs sender = new EmitLogs();

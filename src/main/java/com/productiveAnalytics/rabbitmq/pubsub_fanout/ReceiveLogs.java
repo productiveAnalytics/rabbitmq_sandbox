@@ -1,4 +1,4 @@
-package com.productiveAnalytics.rabbitmq.pubsub_simple;
+package com.productiveAnalytics.rabbitmq.pubsub_fanout;
 
 import java.io.IOException;
 
