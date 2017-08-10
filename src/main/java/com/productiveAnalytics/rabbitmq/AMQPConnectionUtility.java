@@ -23,7 +23,8 @@ public class AMQPConnectionUtility
 	public static String CLOUDAMQP_PASSWORD = "IhFm6sHjpKsRQNKhn1eXUfwgN1swyB1C";
 	
 	public static String DEFAULT_EXCHANGE = "";
-	public static String EXCHANGE_LOGS_FANOUT = "excng_logs";
+	public static String EXCHANGE_LOGS_FANOUT = "exchange_logs.fanout";
+	public static String EXCHANGE_LOGS_DIRECT = "exchange_logs.direct";
 	
 	public static String QUEUE_NAME_BLANK 		= ""; // While using Exchange, no need of Queue
 	
@@ -31,6 +32,31 @@ public class AMQPConnectionUtility
 	public static String QUEUE_NAME_MULTI_TASK 	= "multi_task_queue";
 	
 	public static SimpleDateFormat FORMAT_yyyymmdd_hhmmss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS a");
+	
+	public static enum SEVERITY { 
+			CRITICAL(0),
+			HIGH(1),
+			MEDIUM(2),
+			LOW(3);
+			
+			int code;
+			
+			SEVERITY(int c) {
+				code = c;
+			}
+			
+			public static SEVERITY getSeverityByCode(int c) {
+				switch (c)
+				{
+					case 0 : return CRITICAL;
+					case 1 : return HIGH;
+					case 2 : return MEDIUM;
+					case 3 : return LOW;
+					
+					default : return LOW;
+				}
+			}
+	};
 	
 	private static Connection getRabbitMQConnection()
 							  throws KeyManagementException,
